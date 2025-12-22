@@ -1,0 +1,55 @@
+/* General form styling */
+body{
+  margin-top:14%;
+}
+form {
+  margin-top:20%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Style for each form section */
+#list {
+  margin-bottom: 15px;
+}
+
+/* Style for labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for text inputs */
+input[type='text'] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style for the submit button */
+input[type='submit'] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type='submit']:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Add some focus styling for inputs */
+input[type='text']:focus {
+  border-color: #4CAF50;
+  outline: none;
+}

@@ -1,0 +1,107 @@
+<?php
+print_top();
+echo "<table class=mediatable>";
+
+
+play("2010-09-10_sunday-service_why-god-allows-suffering_tony_et_part_0.mp3");
+play("2010-08-29_sunday-service_learn-and-apply-faith_judy_te_part_0.mp3");
+play("2010-10-22_sunday-service_why-should-we-pray_tony_et_part_3.mp3");
+play("2010-10-15_sunday-service_why-should-we-pray_tony_et_part_2.mp3");
+play("2010-08-08_sunday-service_why-should-we-pray_tony_et_part_I.mp3");
+play("2010-07-25_sunday-service_raising-your-children_tony_et_part_2.mp3");
+play("2010-07-18_sunday-service_raising-your-children_tony_et_part_1.mp3");
+play("2010-07-11_sunday-service_know-who-you-are-in-Christ_judy_te_part0.mp3");
+play("2010-07-04_sunday-service_why-read-the-bible_tony_et_part_0.mp3");
+play("2010-06-25_camp_holy-spirit_justin_t_part_1.mp3");
+play("2010-06-25_camp_holy-spirit_justin_et_part_2.mp3");
+play("2010-06-25_camp_holy-spirit_tony_et_part_3.mp3");
+play("2010-06-25_camp_holy-spirit_judy_te_part_4.mp3");
+play("2010-06-25_camp_holy-spirit_tony_et_part_5.mp3");
+
+
+
+echo "</table>";
+
+function play( $fileName ){
+
+	$file=removeExtension($fileName);
+	list($date, $place, $title, $by, $language,$volume,$volume_id) = split("_", $file);
+	$title=ucwords ( str_replace("-", " ",  $title));
+	$place=ucwords ( str_replace("-", " ", $place));
+	if( $language=="et")  $language="English with Tamil Translation";
+	if( $language=="te")  $language="Tamil with English Translation";
+	if( $language=="t")  $language="Tamil";
+	if( $language=="e")  $language="English";
+	if($volume_id=="0" || $volume_id==""){ $volume="";
+	}else{
+	   if($volume_id!=""){
+	   $volume= " - ".ucfirst($volume)." ".$volume_id;
+	   }
+	}
+	?>
+		<tr>
+					<td width=250px valign=top align=left>
+						<b><?php echo $title;?>  <?php echo $volume;?> </b>
+						<br>
+						<?php echo ucfirst($by);?> - <?php echo  $language;?><br><?php echo $date;?> <i>(<?php echo $place;?>)</i>
+					</td>
+					<td valign=top align=left>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#" onclick="window.open('player.php?file=<?php echo $fileName;?>&playername=mediaplayer','Play','width=300,height=100,left=0,top=100,screenX=0,screenY=100,menubar=no;location=no','true');"><img width=20 height=20 src=data/media/images/mediaplayer.jpg border=0 alt=play></a> &nbsp;&nbsp;
+						<a href="#" onclick="window.open('player.php?file=<?php echo $fileName;?>&playername=quicktime','Play','width=300,height=100,left=0,top=100,screenX=0,screenY=100,menubar=no;location=no','true');"><img width=20 height=20 src=data/media/images/quicktime.jpg border=0 alt=play></a>&nbsp;&nbsp;
+					</td>
+		</tr>
+	<?php
+}
+function removeExtension($strName)  {
+     $ext = strrchr($strName, '.');
+     if($ext !== false)  {
+         $strName = substr($strName, 0, -strlen($ext));
+     }
+     return $strName;
+}
+
+
+function print_top(){
+?>
+
+	<script language="JavaScript" src="data/media/audio-player.js"></script>
+	<style>
+	table.mediatable {
+		border-width: 0px;
+		border-spacing: 0px;
+		border-style: none;
+		border-color: gray;
+		border-collapse: separate;
+		background-color: white;
+	}
+	table.mediatable td {
+		border-width: 0px;
+		border-bottom-width: 1px;
+		padding: 1px;
+		border-style: solid;
+		border-color: silver;
+		background-color: white;
+		-moz-border-radius: ;
+		color:#6699CC;
+		font-size:11px;
+		font-style:normal;
+     }
+	</style>
+	<link rel="stylesheet" href="css/content_css.css" />
+	<br><h3>Audio Messages</h3>
+	<p class=pr_name>
+		Hear Church of grace messages online! Whether you are unable to attend due to illness or travel, want to go back and listen again, would like to refer a meaningful message to a friend, or are a part of our family-at-large, you can listen to archived messages over your internet connection.
+		<br><br>
+		<font  color=#6699CC>
+		All Scripture is inspired by God and profitable for teaching, for reproof, for correction, for training in righteousness; so that the man of God may be adequate, equipped for every good work. 2 Timothy 3.16-17
+		</font>
+		<br><br>
+	</p>
+
+<?php
+}
+?>
+
+
+

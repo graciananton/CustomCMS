@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+}/*
+body {
+    background-color: #435165;
+}*/
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.calendar {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 300px;
+    background: #fff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.header .prev,
+.header .next {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #f7f7f7;
+    padding: 5px 0;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.days-of-week div {
+    font-weight: bold;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.day:nth-child(7n) {
+    border-right: none;
+}
+
+.day:nth-child(n+22) {
+    border-bottom: none;
+}
+
+.day:nth-child(1),
+.day:nth-child(2),
+.day:nth-child(3),
+.day:nth-child(4),
+.day:nth-child(5),
+.day:nth-child(6),
+.day:nth-child(7) {
+    border-top: none;
+}
+
+.textarea{
+    width:200px;
+    height:50px;
+    border:1px solid black;
+  }
+  
+.login {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+}
+.login h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}

@@ -1,0 +1,46 @@
+
+     /*   table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: left;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }*/
+
+        /* Set the table to take up one-third of the page width */
+.table-container {
+    width: 33%;
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Merge borders */
+    border: 1px solid #ddd; /* Border color for the table */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Border color for cells */
+    padding: 8px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: #f4f4f4; /* Background color for table headers */
+    font-weight: bold; /* Make header text bold */
+}

@@ -1,0 +1,149 @@
+<link rel="stylesheet" href="css/content_css.css" />
+<link rel="stylesheet" href="css/box.css" />
+
+
+<table widht=500 border="0" cellspacing="0" cellpadding="0">
+	<tr>
+	<td align=right>
+		<script language="JavaScript" type="text/javascript" src="scriptes/verse.js"></script>
+	</td>
+	</tr>
+</table>
+
+<img src=img/welcome.png border=0>
+<br>
+
+<font class=pr_name>
+
+	<table background=img/aswerme.jpg border=0 cellSpacing=0 cellPadding=0 class=pr_name>
+		<tr>
+		<td valign=top class=pr_name>
+
+			<P class=pr_name >
+			<FONT class=pr_name>
+
+			We are a growing church in <font color=#6603CC> Ottawa - Ontario - Canada </font>
+			with a heart for you and the world. Our doors are open to everyone from all backgrounds.
+			Together, we are striving to be like the churches found in the Bible. We are focused on relevant,
+			inspiring teaching, solid friendships, genuine worship, prayer, and compassionate care for those
+			who are hurting or in need.  All of our services are conducted in <font color=#6603CC>Tamil/English
+			</font>.
+			<br>
+			<br>
+			In our website you will find information on our ministries and events that will strengthen
+			you and your family.  Also provided are resources to help you grow in your faith and
+			to discover more about Jesus and His Word.
+			<br> <br>
+
+			</FONT>
+			</P>
+			</td></tr>
+	</table>
+
+
+
+<table border="0" cellspacing="0" cellpadding="0" width=99% >
+<tr>
+<td width=170>
+	<?php include("$root/templates/topsq.php"); ?>
+
+        <div >
+		    <table cellSpacing="0" cellPadding="0"  border="0" height=90>
+		    <tr><td colspan=3 height=5></td></tr>
+		    <tr><td width=10>  </td><td valign=top>
+			<a href=index.php?id=sundayschedule><img src="img/home_24.jpg" alt="" border="0" width="69" height="72" ></a>
+			</td><td width=10>  </td><td><td valign=top  class=pr_name>We invite you to come and worship with us.
+
+			</td></tr>
+			<tr><td colspan=3 height=5></td></tr>
+			</table>
+	      </div>
+
+
+	<?php include("$root/templates/bottomsq.php"); ?>
+</td>
+<td width=170>
+<?php include("$root/templates/topsq.php"); ?>
+
+		 <div>
+		<table cellSpacing="0" cellPadding="0"  border="0" height=90>
+				    <tr><td colspan=3 height=5></td></tr>
+				    <tr><td width=10>  </td><td valign=top>
+					<a href=index.php?id=biblestudy><img src="img/biblestudy.jpg" alt="" border="0" width="70" height="70" ></a>
+					</td><td width=10>  </td><td><td valign=top  class=pr_name>
+					Come and join our Bible study ...
+
+					</td></tr>
+					<tr><td colspan=3 height=5></td></tr>
+			</table>
+		</div>
+
+
+<?php include("$root/templates/bottomsq.php"); ?>
+</td>
+<td width=170>
+<?php include("$root/templates/topsq.php"); ?>
+		<div >
+			  <table cellSpacing="0" cellPadding="0"  border="0" height=90>
+					    <tr><td colspan=3 height=5></td></tr>
+					    <tr><td width=10></td><td valign=top>
+						<a href=index.php?id=whoisjesus&td=yes><img src="img/dt_icon_cross.jpg" alt="" border="0" width="60" height="60" ></a>
+						</td><td width=10></td><td>
+						<td valign=top  class=pr_name>
+						Indeed, who is Jesus Christ?
+						</td></tr>
+						<tr><td colspan=3 height=5></td></tr>
+			</table>
+		</div>
+	<?php include("$root/templates/bottomsq.php");?>
+</td>
+</tr>
+</table>
+
+<br>
+<table cellSpacing="0" cellPadding="0" width="100%" border=0>
+<tr><td valign=top align=left>
+<table cellSpacing="0" cellPadding="0" width="380" border="0"  height=185 background=img/calendar2.png>
+	<tr><td height=15 colspan=2 align=right>
+			   <?php
+				$day1 = date("l/d", time() - ((date("w") - 1) * 24 * 60 * 60));
+				$day2 = date("l/d ", time() - ((date("w") - 7) * 24 * 60 * 60));
+				echo "<font color=gray>".$day1." to ".$day2."</font>&nbsp;&nbsp;";
+				?>
+	</td></tr>
+	<tr>
+	<td valign=top width=190> </td>
+	<td valign=top align=left class=pr_name>
+		<?php include("$root/data/eventsschedule.html"); ?>
+	</td>
+	</tr>
+</table>
+</td><td background=img/vline.png width=25>&nbsp;</td><td>&nbsp;&nbsp;</td><td valign=top align=left>
+
+<table cellSpacing="0" cellPadding="0"  border="0	" width=160 >
+	<tr><td valign=top colspan=2 align=left>
+		<img src=img/gospelmessage.png border=0>
+		</td>
+	</tr>
+	<tr><td valign=top colspan=2 align=left class=pr_name>
+			&nbsp;&nbsp;We are delighted to present you with our daily message on-line. Everyday you can listen to these new messages which will help you throughout the day.
+			<br><br>
+			</td>
+	</tr>
+	<tr>
+	    <?
+		 $englishMsg="e".date('w').".mp3";
+		 $tamilMsg="t".date('m').".mp3";
+		?>
+	    <td valign=top align=center class=pr_name>
+	         <b>English</b><a href="#" onclick="popitup('audio','churchmedia/Audio/Daily/<? echo $englishMsg;?>','churchmedia/images/hecares.png','Gospel Message - English',400,230)"><br><img src=img/audio.png border=0></a></td>
+	   	<td valign=top align=center class=pr_name>
+	   	     <b>Tamil</b><a href="#" onclick="popitup('audio','churchmedia/Audio/Daily/<? echo $tamilMsg;?>','churchmedia/images/hecares.png','Gospel Message - Tamil',400,230)"><br><img src=img/audio.png  border=0></a></td>
+    </tr>
+    <tr><td valign=top colspan=2 align=center class=pr_name>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Faith comes by hearing, and hearing by the Word of God. Romans 10:17
+		</td>
+	</tr>
+</table>
+
+</td></tr></table>

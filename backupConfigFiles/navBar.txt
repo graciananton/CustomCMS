@@ -1,0 +1,30 @@
+NAVBAR:
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id=navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-danger display-6" href=http://localhost/churchWebsite/index.php?pid=378>About Us</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger display-6" href=http://localhost/churchWebsite/index.php?pid=389>Sermons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-danger display-6" href=http://localhost/churchWebsite/index.php?pid=392>Events</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link text-danger display-6" href=http://localhost/churchWebsite/index.php?pid=396>Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown show">
+                         <a class="btn dropdown-toggle text-danger lead btn-lg" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Our Beliefs</a>
+                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                             <a class="dropdown-item" href=http://localhost/churchWebsite/index.php?pid=379>What We Believe</a>
+                             <a class="dropdown-item" href=http://localhost/churchWebsite/index.php?pid=391>Our Values</a>
+                         </div>
+                    </div>
+                </li>
+              </ul>
+        </div>
+    </nav>
+
