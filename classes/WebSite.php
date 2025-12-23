@@ -82,7 +82,6 @@ class webPage extends Page{
     }
     private function setChristmasHolidays(){
         $this->christmasHolidays = new Page(Config::$pageComponents['christmasHolidays'],$this->request);
-       
         $this->webPageStr = str_replace("#COG_CHRISTMASHOLIDAYS",$this->christmasHolidays->content,$this->webPageStr);
     }
     private function setTemplate(){

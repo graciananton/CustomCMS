@@ -253,8 +253,8 @@ Book We Are Covering: 2 Thessalonians
                     </div>
 
                     <div class="form-group">
-                        <label for="file">Video File:</label>
-                        <input type="file" id="videoFile" name="videoFile"  required>
+                        <label for="videoAddress">Video Address:</label>
+                        <input type="text" id="videoAddress" name="videoAddress" value='' required>
                     </div> 
                     <div id="grid-item">
                                 <label for = "content">Notes:</label><br/>

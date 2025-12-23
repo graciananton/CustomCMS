@@ -8,24 +8,12 @@ class adminRequestResolver{
         $this->list = $array;
     }
     public function process(){
-       /* echo "Porcessing";
-        echo '<br/>';
-        echo 'Porcessing';*/
         $aView = new View();
         $req=$this->list['req'];
-    //    echo $req;
-       // echo "<br/><br/><br/>".$req."<br/><br/><br/>";
-       
-       // $aManager = new databaseManager("","db5016188832.hosting-data.io","dbu246834","78Ijoycian#","dbs13175679");
        $dbInfo = Config::getMySQLInfo();
 
       
        $aManager = new databaseManager($lang,$dbInfo["dbHost"],$dbInfo["dbPassword"],$dbInfo["dbUserName"],$dbInfo["dbName"]);
-       // echo "<pre>";
-       // print_r($aManager);
-       // echo '</pre>';
-       // echo $req."<br/><br/><br/><br/>";
-        //$req = "pageViews"
         if($req=="pf-insertCDate"){
             $aView->viewCalendar();
         }
@@ -36,7 +24,6 @@ class adminRequestResolver{
             ###do something
         }
         if($req=="pf-editMedia"){
-            //print_r($this->list);
         
             $aView->displayMediaPage("table","");
         }
@@ -48,11 +35,7 @@ class adminRequestResolver{
             include_once "../templates/menu.php";
         }
         if($req=="pf-PageViews"){
-            //echo "Pf-PageViews";
             $pageViewsSet = $aManager->traverse_ip_addresses();
-            /*echo "<pre>";
-            print_r($pageViewsSet);
-            echo "</pre>";*/
             $aView->createTableByPageViews($pageViewsSet);
         }
         if($req=="eventDate"){
@@ -77,8 +60,6 @@ class adminRequestResolver{
             $aView->displayMediaPage("delete",$this->list);
         }
         if($this->list['submit']=="submitVideo"){
-            echo "submitted Video";
-
             $aSermon = new Sermon($this->list,"");
             $aSermon->processMedia();
         }

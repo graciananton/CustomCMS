@@ -343,10 +343,6 @@ class databaseManager{
         }
     }
     public function update($aPage){
-        echo "update()";
-        echo "<pre>";
-        print_r($aPage);
-        echo "</pre>";
         $this->connect();
         $searchKeyword= $aPage->getSearchKeyword();
         $searchKeyword =str_replace("'", "\\'", $searchKeyword);

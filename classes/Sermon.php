@@ -14,21 +14,16 @@ class Sermon{
         $this->request = $request;
         $dbInfo = Config::getMySQLInfo();
         $this->aManager = new databaseManager($request,$dbInfo["dbHost"],$dbInfo["dbPassword"],$dbInfo["dbUserName"],$dbInfo["dbName"]);
-        //$this->aManager = new databaseManager($request, Config::$dbInfo["dbHost"],Config::$dbInfo["dbPassword"],Config::$dbInfo["dbUser"],Config::$dbInfo["dbName"]);
-
     }
 
     public function processMedia(){
         if($this->mediaList['submit']=="submitVideo" || $this->mediaList['submit']=='submitTamilVideo'){
-            echo "Inserted";
             $this->aManager->insertMedia($this->mediaList);
         }
         if($this->mediaList['submit']=="updateVideo"){
-            echo "Update<br/>";
             $this->aManager->updateMedia($this->mediaList);
         }
         if($this->mediaList['req']=="delete"){
-            echo "Deleting";
             $this->aManager->deleteMedia($this->mediaList);
         }
     }
@@ -119,95 +114,10 @@ class Sermon{
         $categories = $this->getCategories($sermonResults);
         $optionList = $this->createOptionList($categories);
         if($this->request['lang']=="tamil"){
-            $sermonPage="    
-கடந்த வார செய்தியைப் பாருங்கள். நீங்கள் ஒரு குறிப்பிட்ட பிரசங்கத்தைத் தேடுகிறீர்களா அல்லது எங்கள் செய்திகளின் தொகுப்பை ஆராய விரும்பினால்? ஆண்டு அல்லது மாதம் சொற்பொழிவுகளைக் கண்டறிய தேடல் அம்சத்தைப் பயன்படுத்தவும்.                <div class='form-container'>
-                    <form action='index.php?pid=420&lang=tamil' id='sermonSearch' enctype='multipart/form-data' method='get' onsubmit='saveFormData()'>
-                        <div>
-                            <label for='year'>Year:</label>
-                            <select id='year' name='year'>
-                                <option value='2021'>2021</option>
-                                <option value='2022' selected>2022</option>
-                                <option value='2024'>2024</option>
-                                <option value='2025'>2025</option>
-                            </select>
-                        </div>
-            
-                        <div>
-                            <label for='month'>Month:</label>
-                            <select id='month' name='month'>
-                                <option value='01'>January</option>
-                                <option value='02'>February</option>
-                                <option value='03'>March</option>
-                                <option value='04'>April</option>
-                                <option value='05'>May</option>
-                                <option value='06'>June</option>
-                                <option value='07'>July</option>
-                                <option value='08'>August</option>
-                                <option value='09'>September</option>
-                                <option value='10'>October</option>
-                                <option value='11'>November</option>
-                                <option value='12'>December</option>
-                                <option selected value='--'>--</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for='category'>Category:</label>
-                            <select id='category' name='category'>
-                            "
-                            .$optionList.
-                            "
-                            </select>
-                        </div>
-                        <div>
-                            <input type='hidden' name='pid' value='420'>
-                            <input type='hidden' name='lang' value='tamil'/>
-
-                        <input type='submit' value='Search' name='search'/>
-                        </div>
-                    </form>
-                
-                </div>
-                ".$this->findLatestSermon().$this->showSeveralSermons('tamil');
+            $sermonPage=$this->findLatestSermon().$this->showSeveralSermons('tamil');
         }
         else{
-            $sermonPage="    
-                Watch Last Week's Message. If you are looking for a specific sermon or want to explore our collection of messages? Use the search feature to find sermons by year or month.
-                <div class='form-container'>
-                <form action='index.php?pid=420' enctype='multipart/form-data' method='get' onsubmit='saveFormData()'>
-                    <div>
-                        <label for='year'>Year:</label>
-                        <select id='year' name='year'>
-                            <option value='2025'>2025</option>
-                            <option value='2024'>2024</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for='month'>Month:</label>
-                        <select id='month' name='month'>
-                            <option value='1'>January</option>
-                            <option value='11'>November</option>
-                            <option value='12'>December</option>
-                            <option selected value='--'>--</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for='category'>Category:</label>
-                            <select id='category' name='category'>"
-                                    .$optionList.
-                                    "
-                                    </select>
-                    </div>
-                
-                    <div>
-                        <input type='hidden' name='pid' value='420'>
-                        <input type='hidden' name='lang' value='english'/>
-                    <input type='submit' value='Search' id='sermon_search' name='search'/>
-                    </div>
-                </form>
-            
-            </div>
-            ".$this->findLatestSermon().$this->showSeveralSermons('');
+            $sermonPage=$this->findLatestSermon().$this->showSeveralSermons('');
         }
         return $sermonPage;
     }

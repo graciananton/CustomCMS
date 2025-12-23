@@ -162,10 +162,6 @@ class tagResolver{
        }
     }
     public function sendMail(){
-        echo $this->mailTo."<br/>";
-        echo $this->subject."<br/>";
-        echo $this->txt."<br/>";
-        echo $this->headers."<br/>";
         if(mail($this->mailTo,$this->subject,$this->txt,$this->headers)){
             echo "Email sent successfully";
             return true;
